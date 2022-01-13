@@ -1,0 +1,35 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost   
+       
+
+microservice:
+  contact-service:
+    endpoints:
+      endpoint:
+        uri: http://CONTACT-SERVICE/api/contact/sendEmail
+  team-driver-service:
+    endpoints:
+      endpoint:
+        uri: http://TEAM-DRIVER-SERVICE/drivers/add
+  registration-user-service:
+    endpoints:
+      endpoint:
+        uri: http://REGISTRATION-USER-SERVICE/api/auth/registration
+  available-driver-service:
+    endpoints:
+      endpoint:
+        uri: http://AVAILABLE-DRIVER-JOBS-SERVICE/api/v1/availableDrivers
+  freight-quote-service:
+    endpoints:
+      endpoint:
+        uri: http://FREIGHT-QUOTE-SERVICE/api/v1/freightQuotes
+  pre-qualify-now-service:
+    endpoints:
+      endpoint:
+        uri: http://PRE-QUALIFY-NOW-SERVICE/api/v1/preQualifyDrivers
